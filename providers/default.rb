@@ -6,7 +6,7 @@ def whyrun_supported?
 end
 
 def load_current_resource
-  @current_resource = Chef::Resource::SumologicCollector.new(new_resource.dir)
+  @current_resource = new_resource.class.new(new_resource.dir)
   @current_resource.installed(installed?)
 end
 
