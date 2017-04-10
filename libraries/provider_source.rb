@@ -18,20 +18,18 @@ class Chef
       end
 
       action :create do
-        converge_by("Create #{source_json_path}") do
-          file source_json_path do
-            content config_json
-            owner new_resource.owner
-            group new_resource.group
-            mode new_resource.mode
-            checksum new_resource.checksum
-            backup new_resource.backup
-            if Platform.windows?
-              inherits new_resource.inherits
-              rights new_resource.rights
-            end
-            sensitive(/password/i === config_json)
+        file source_json_path do
+          content config_json
+          owner new_resource.owner
+          group new_resource.group
+          mode new_resource.mode
+          checksum new_resource.checksum
+          backup new_resource.backup
+          if Platform.windows?
+            inherits new_resource.inherits
+            rights new_resource.rights
           end
+          sensitive(/password/i === config_json)
         end
       end
 
