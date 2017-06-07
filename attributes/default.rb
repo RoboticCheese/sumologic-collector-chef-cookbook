@@ -95,6 +95,9 @@ when 'redhat', 'centos', 'scientific', 'fedora', 'suse', 'amazon', 'oracle', 'de
   # Collector Restart Command
   default['sumologic']['collectorRestartCmd'] = "#{default['sumologic']['installDir']}/collector restart"
 
+  # Collect System and Syslog sources by default
+  default['sumologic']['use_preset_json_configs'] = true
+
   # Syslog source category
   default['sumologic']['syslog_cat'] = 'OS/Linux/System'
 
