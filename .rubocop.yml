@@ -49,3 +49,10 @@ Metrics/ModuleLength:
 # conditionals are not _so_ bad
 Metrics/AbcSize:
   Max: 20
+
+# Ensure older RuboCops use this same default as newer ones
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    default: '[]'
+    '%i': '[]'
+    '%w': '[]'
